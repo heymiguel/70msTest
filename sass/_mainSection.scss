@@ -9,10 +9,12 @@
 
 .mainWrapper{
 	@include outer-container;
-	position: relative;
+	
+	background: $sidebarBlue;
 	nav{
 		@include fill-parent;
 		background: $navBlue;
+		position: relative;
 		padding: 1.2em;
 		.navLogo{
 			width: 90px;
@@ -20,13 +22,20 @@
 			
 			img{
 				width: 80px;
-				margin-bottom: 1.9em;
+				margin: 1.4em 0;
 			}
 		}
 		.signUp{
 			position: absolute;
-			top: 10px;
-			right: 10px;
+			top: 15px;
+			right: 30px;
+			@include pillbutton;
+			font-size: .85em;
+			background: none;
+			padding:0 1.7em;
+			border: white 2px solid;
+			color: white;
+
 		}
 		.pageNav{
 			width: 75%;
@@ -38,6 +47,9 @@
 					display: inline;
 					color: white;
 					margin: 0 1.5em;
+				}
+				a{
+					color: white;
 				}
 			}
 		}
@@ -85,14 +97,25 @@
 			}
 			.bottomHalf{
 				.leftContent{
-					width: 50%;
+					width: 52%;
+					padding: 2.7em 1.7em 0 0.5em;
+					p{
+						font-size: .9em;
+						font-family: 'Arimo', sans-serif;
+						font-weight: 400;
+						line-height: 1.75em;
+					}
+				
 				}
 				.rightImage{
-					width: 50%;
+					width: 48%;
 				}
 			}
 		.seeMore{
 			color: $blueText;
+			font-size: .9em;
+			font-family: 'Arimo', sans-serif;
+			font-weight: 700;
 		}
 	}	
 	.rightSidebar{
@@ -101,18 +124,51 @@
 		@include span-columns(4 of 12, block-collaps);
 		background: $sidebarBlue;
 		padding: 2.5em 2em;
+		h3{
+			font-weight:500;
+			width: 80%;
+			margin-bottom: 1.3em;
+			color: $blueText;
+		}
+		p{
+			width: 80%;
+			font-size: .9em;
+			font-family: 'Arimo', sans-serif;
+			font-weight: 400;
+			line-height: 1.75em;
+			margin: 2.65em 0 ;
+		}
+		button{
+			@include pillbutton;
+			border-radius: 25px;
+			background: $blueText;
+			border: 1px solid $blueText;
+			padding: .2em 2.1em;
+			font-size: 1.1em;
+			color: white;
+			font-weight: 300;
+			-webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.75);
+			-moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.75);
+			box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.75);
+		}
 	}
 
 }
 footer{
-	color: white;
 	@include outer-container;
+	color: white;
+	font-size: .9em;
+	font-family: 'Arimo', sans-serif;
+	font-weight: 400;
+	margin-top: 1.5em;
+	margin-bottom: 24em;
 	.footerLinks{
-		margin: 0 auto;
-		width: 50%;
+		margin-bottom: 1.5em;
 		text-align: center;
 			span{
-				color: lightblue;
+				color: $blueText;
+				font-weight: bold;
+				margin:0 .7em;
 			}
 			li{
 				display: inline;
@@ -125,6 +181,7 @@ footer{
 		width: 50%;
 		margin: 0 auto;
 		text-align: center;
+		font-size: .7em;
 	}
 
 }

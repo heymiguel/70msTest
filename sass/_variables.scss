@@ -6,3 +6,21 @@ $bodyBlue: #ebf6fb;
 $sidebarBlue: #cee9f5;
 $blueText: #3da7d8;
 
+// convenience mixins
+
+@mixin pillbutton{
+		text-decoration:none;
+		color:#333333;
+		font-size:12px;
+		font-weight:bold;
+		padding:0 15px;
+		line-height:32px;
+		height: auto;
+		display:inline-block;
+		text-align:center;
+		background-color:#DDDDDD;
+		  -webkit-border-radius: 16px;
+		  -moz-border-radius: 16px;
+		  border-radius: 16px;
+
+}
