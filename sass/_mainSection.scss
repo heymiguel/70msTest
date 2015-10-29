@@ -9,7 +9,6 @@
 
 .mainWrapper{
 	@include outer-container;
-	
 	background: $sidebarBlue;
 	nav{
 		@include fill-parent;
@@ -19,7 +18,9 @@
 		.navLogo{
 			width: 90px;
 			margin: 0 auto;
-			
+			@include media (max-width 740px){
+				width: auto;
+			}
 			img{
 				width: 80px;
 				margin: 1.4em 0;
@@ -37,19 +38,33 @@
 			color: white;
 
 		}
+		.signUp:hover{
+			background: white;
+			color: $blueText;
+		}
 		.pageNav{
 			width: 75%;
 			padding: 0;
 			margin: 0 auto;
+			@include media (max-width 740px){
+				width: 100%;
+			}
 			ul{
 			text-align: center;
 				li{
 					display: inline;
 					color: white;
 					margin: 0 1.5em;
+					@include media (max-width 740px){
+						display: block;
+						text-align: left;
+						margin: 0;
+					}
 				}
 				a{
 					color: white;
+				}:hover{
+					border-bottom: 1px white solid;
 				}
 			}
 		}
@@ -62,11 +77,14 @@
 			padding: 1.6em 5em;
 			font-weight: 100;
 			font-size:2.5em;
+			@include media (max-width 740px){
+				padding: 1.2em 2em;
+			}
 		}
 	}
 
 	.leftMain{
-		float: left;
+		// float: left;
 		@include clearfix;
 		@include span-columns(8 of 12, block-collapse);
 		background: $bodyBlue;
@@ -76,16 +94,28 @@
 			width: 70%;
 			margin-bottom: 1.3em;
 			color: $blueText;
+			@include media (max-width 1010px){
+				
+				width: 100%;
+				
+			}
 		}
 			.topHalf{
 				@include clearfix;
 				margin-bottom: 4em;
 				.leftImage{
-					width: 50%
+					width: 50%;
+					@include media (max-width 740px){
+						display:none;
+					}
 				}
 				.rightContent{
 					width: 50%;
 					padding: .2em 1.7em 0 0;
+					@include media (max-width 740px){
+						width:100%;
+						padding: 0;
+					}
 					p{
 						font-size: .9em;
 						font-family: 'Arimo', sans-serif;
@@ -99,6 +129,10 @@
 				.leftContent{
 					width: 52%;
 					padding: 2.7em 1.7em 0 0.5em;
+					@include media (max-width 740px){
+						width: 100%;
+						padding: 0;
+					}
 					p{
 						font-size: .9em;
 						font-family: 'Arimo', sans-serif;
@@ -109,6 +143,9 @@
 				}
 				.rightImage{
 					width: 48%;
+					@include media (max-width 740px){
+						display: none;
+					}
 				}
 			}
 		.seeMore{
@@ -116,6 +153,11 @@
 			font-size: .9em;
 			font-family: 'Arimo', sans-serif;
 			font-weight: 700;
+		}
+		@include media (max-width 1010px){
+			float: none;
+			width: 100%;
+			display: block;
 		}
 	}	
 	.rightSidebar{
@@ -129,6 +171,12 @@
 			width: 80%;
 			margin-bottom: 1.3em;
 			color: $blueText;
+			@include media (max-width 1010px){
+				
+				width: 100%;
+				display: block;
+				
+			}
 		}
 		p{
 			width: 80%;
@@ -137,8 +185,14 @@
 			font-weight: 400;
 			line-height: 1.75em;
 			margin: 2.65em 0 ;
+			@include media (max-width 1010px){
+				
+				width: 100%;
+				display: block;
+				
+			}
 		}
-		button{
+		.getStarted{
 			@include pillbutton;
 			border-radius: 25px;
 			background: $blueText;
@@ -150,6 +204,17 @@
 			-webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.75);
 			-moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.75);
 			box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.75);
+		}
+		.getStarted:hover{
+			background: white;
+			border: 1px solid white;;
+			color: $blueText;
+		}
+		@include media (max-width 1010px){
+			float: none;
+			width: 100%;
+			display: block;
+			text-align: center;
 		}
 	}
 
@@ -173,7 +238,9 @@ footer{
 			li{
 				display: inline;
 			}
-			
+			a{
+				color: white;
+			}
 
 	}
 	small{
