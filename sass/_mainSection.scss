@@ -1,0 +1,76 @@
+// convenience classes
+
+.fourByFour{
+	float: left;
+	width: 50%;
+}
+
+.mainWrapper{
+	@include outer-container;
+	position: relative;
+	nav{
+		@include fill-parent;
+		background: $navBlue;
+		.navLogo{
+			width: 90px;
+			margin: 0 auto;
+			img{
+				width: 90px;
+			}
+		}
+		button{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+		ul{
+			li{
+				display: inline;
+				color: white;
+			}
+		}
+	}
+	.heroQuote{
+		background: white;
+		h1{
+			color: gray;
+		}
+	}
+
+	.leftMain{
+		float: left;
+		@include clearfix;
+		@include span-columns(9 of 12, block-collapse);
+		background: $bodyBlue;
+		.topHalf{
+			@include clearfix;
+
+		}
+
+	}	
+	.rightSidebar{
+		float: left;
+		@include clearfix;
+		@include span-columns(3 of 12, block-collaps);
+		background: $sidebarBlue;
+	}
+
+}
+footer{
+	color: white;
+	@include outer-container;
+	.footerLinks{
+		@include span-columns (12);
+		
+			li{
+				display: inline;
+			}
+			.footerDivider{
+				color: lightblue;
+			}
+			small{
+
+			}
+	}
+
+}
